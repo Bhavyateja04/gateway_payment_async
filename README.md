@@ -375,25 +375,3 @@ docker-compose logs -f
 | Wrong API creds | Use `/api/v1/test/merchant`       |
 
 ---
-
-## 📸 Screenshots
-
-> *(Add your screenshot images into `docs/screenshots/` folder and link them here)*
-
----
-
-## 🎥 Demo Video
-
-YouTube demo link (example):
-
-```
-https://youtu.be/4KSuhuzYth4
-```
-
----
-
-## 📜 License
-
-MIT License
-
-```
