@@ -1,0 +1,506 @@
+/* API Docs Page */
+.api-docs-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  padding: 32px 24px;
+  position: relative;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animated background */
+.api-docs-page::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  animation: float 25s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-60px) scale(1.15); }
+}
+
+/* Container */
+.api-docs-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Back button */
+.api-docs-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.api-docs-back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Headers */
+.api-docs-container h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.api-docs-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.api-docs-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: #1e293b;
+}
+
+.api-docs-container h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+/* Paragraphs */
+.api-docs-container p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+/* Lists */
+.api-docs-container ul {
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+
+.api-docs-container ul li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* Inline code */
+.api-docs-container code {
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 13px;
+  color: #667eea;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+/* Code blocks */
+.api-docs-container pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.api-docs-container pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  border: none;
+}
+
+/* Docs sections */
+.docs-section {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.docs-section h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.docs-section pre {
+  margin: 20px 0;
+  background: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.docs-section pre code {
+  color: #1e293b;
+}
+
+/* Endpoint styling */
+.endpoint {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f0f4ff;
+  border-left: 4px solid #667eea;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.endpoint:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.endpoint code {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #667eea;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #e0e7ff;
+}
+
+.endpoint p {
+  margin: 0;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Info box */
+.info-box {
+  background: #e0e7ff;
+  border-left: 4px solid #667eea;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.info-box h3 {
+  color: #4f46e5;
+  margin-top: 0;
+}
+
+.info-box p,
+.info-box ul li {
+  color: #4338ca;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .api-docs-container {
+    padding: 0 16px;
+  }
+
+  .api-docs-page::before {
+    width: 350px;
+    height: 350px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .api-docs-container h1 {
+    font-size: 32px;
+  }
+
+  .docs-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .api-docs-page {
+    padding: 24px 16px;
+  }
+
+  .api-docs-page::before {
+    width: 300px;
+    height: 300px;
+    top: -75px;
+    right: -75px;
+  }
+
+  .api-docs-container h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .api-docs-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .api-docs-container h2 {
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .api-docs-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .api-docs-container p,
+  .api-docs-container ul li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .api-docs-container pre {
+    font-size: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .docs-section {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .endpoint {
+    padding: 12px;
+    margin: 14px 0;
+    border-left-width: 3px;
+  }
+
+  .endpoint code {
+    font-size: 13px;
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+
+  .info-box {
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  .api-docs-back-button {
+    padding: 9px 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .api-docs-page {
+    padding: 20px 14px;
+  }
+
+  .api-docs-page::before {
+    width: 280px;
+    height: 280px;
+    top: -90px;
+    right: -90px;
+  }
+
+  .api-docs-container h1 {
+    font-size: 24px;
+  }
+
+  .api-docs-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .api-docs-container h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .api-docs-container h3 {
+    font-size: 15px;
+  }
+
+  .api-docs-container p,
+  .api-docs-container ul li {
+    font-size: 13px;
+  }
+
+  .api-docs-container code {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .api-docs-container pre {
+    font-size: 11px;
+    padding: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .docs-section {
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+
+  .endpoint {
+    padding: 10px;
+    margin: 12px 0;
+  }
+
+  .endpoint code {
+    font-size: 12px;
+  }
+
+  .endpoint p {
+    font-size: 13px;
+  }
+
+  .info-box {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .api-docs-back-button {
+    padding: 8px 14px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .api-docs-container ul {
+    margin-left: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .api-docs-page {
+    padding: 16px 12px;
+  }
+
+  .api-docs-page::before {
+    width: 220px;
+    height: 220px;
+    top: -100px;
+    right: -100px;
+  }
+
+  .api-docs-container {
+    max-width: 100%;
+  }
+
+  .api-docs-back-button {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .api-docs-container h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .api-docs-subtitle {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .api-docs-container h2 {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .api-docs-container h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .api-docs-container p,
+  .api-docs-container ul li {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .api-docs-container code {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .api-docs-container pre {
+    font-size: 10px;
+    padding: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 10px;
+  }
+
+  .docs-section {
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+  }
+
+  .endpoint {
+    padding: 8px;
+    margin: 10px 0;
+    border-left-width: 2px;
+  }
+
+  .endpoint code {
+    font-size: 11px;
+    padding: 4px;
+    margin-bottom: 4px;
+  }
+
+  .endpoint p {
+    font-size: 12px;
+  }
+
+  .info-box {
+    padding: 8px;
+    margin: 8px 0;
+    border-left-width: 3px;
+  }
+
+  .info-box h3 {
+    font-size: 13px;
+  }
+
+  .api-docs-container ul {
+    margin-left: 14px;
+    margin-bottom: 12px;
+  }
+}
